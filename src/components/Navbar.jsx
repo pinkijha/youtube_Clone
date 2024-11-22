@@ -10,7 +10,7 @@ import profilePic from '../../public/profilepic.jpg'
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between px-6 py-2">
+    <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2">
       <div className="flex items-center space-x-4">
         <MdOutlineMenu className="cursor-pointer text-3xl" />
         <img className="w-24 cursor-pointer" src={logo} alt="logo-img" />
@@ -18,7 +18,7 @@ const Navbar = () => {
 
       <div className="flex w-[35%] items-center">
         <div className="w-[100%] px-3 py-2 border rounded-l-full">
-          <input className="outline-none" type="text" placeholder="Search" />
+          <input className="outline-none w-[100%]" type="text" placeholder="Search" />
         </div>
         <button className="px-4 py-2 border rounded-r-full bg-gray-100">
           <CiSearch size={"24px"} />
