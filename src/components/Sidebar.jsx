@@ -202,7 +202,7 @@ const Sidebar = () => {
       </div>
 
       <hr className="mt-4" />
-      <div className="ml-5 my-2 p-2 text-sm font-semibold text-gray-700">
+      <div className="ml-5 my-2 p-2 text-sm font-semibold text-gray-600">
         <p className="my-3" >About Press Copyright <br/>  Contact us Creators<br/> Advertise Developers</p>
         <p className="my-3" >Terms Privacy Policy & Safety How YouTube works<br/> Test new features</p>
         <p className="my-3 text-xs text-gray-400" >© 2024 Google LLC</p>
