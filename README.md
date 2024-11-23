@@ -3,3 +3,14 @@
     - Add tailwind css
     - create components
         - Navbar Component
+        - Sidebar Components
+        - Home
+        - Search
+        - Video
+        - VideoPlaying
+    - Install Packages    
+        - Install the react-router-dom
+        - Install react-icons for icons
+        - Axios
+        - Avatar
+        - 
