@@ -139,7 +139,7 @@ const Sidebar = () => {
   ]
 
   return (
-    <div className="px-3 shadow-lg w-[30%] h-[calc(110vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
+    <div className="px-3 shadow-lg w-[25%] h-[calc(110vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
       <ul>
         <li className=" cursor-pointer p-2 rounded-lg hover:bg-gray-300">
           <a className="cursor-pointer flex my-2" to={"/"}>
