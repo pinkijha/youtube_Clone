@@ -11,6 +11,8 @@
     - Install Packages    
         - Install the react-router-dom
         - Install react-icons for icons
-        - Axios
-        - Avatar
-        - 
+        - npm i axios - for http request
+        - npm i avatar - for image
+        - npm i moment - to show timing on youtube video
+        
+
