@@ -24,6 +24,7 @@ import {
   SiYoutubekids,
   FaYoutube,
   SiYoutubemusic,
+  MdOutlineSubscriptions,
 } from "../components/icons.jsx";
 import { BiPodcast } from "react-icons/bi";
 
@@ -138,19 +139,19 @@ const Sidebar = () => {
   ]
 
   return (
-    <div className="px-3 mt-16 shadow-lg w-64 h-[calc(110vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
+    <div className="px-3 shadow-lg w-[30%] h-[calc(110vh-6.625rem)] overflow-y-scroll overflow-x-hidden">
       <ul>
         <li className=" cursor-pointer p-2 rounded-lg hover:bg-gray-300">
           <a className="cursor-pointer flex my-2" to={"/"}>
             {" "}
-            <AiOutlineHome className=" text-2xl mx-6" /> Home
+            <AiOutlineHome className=" text-2xl mx-2" /> Home
           </a>
         </li>
         <li className="flex cursor-pointer p-2 rounded-lg hover:bg-gray-300 my-2">
-          <SiYoutubeshorts className=" text-xl mx-6" /> Shorts
+          <SiYoutubeshorts className=" text-xl mx-2" /> Shorts
         </li>
         <li className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
-          <MdSubscriptions className=" text-xl mx-6" />
+          <MdOutlineSubscriptions className=" text-2xl mx-2" />
           Subscriptions
         </li>
       </ul>
@@ -159,16 +160,16 @@ const Sidebar = () => {
       {/* You Part */}
         <div className="flex item-center space-x-2 ">
           
-      <h1 className="font-bold text-xl ml-5 pt-4">You</h1>
+      <h1 className="font-bold text-xl ml-4 pt-4">You</h1>
           <MdOutlineKeyboardArrowRight className="font-bold text-2xl ml-6 mt-6 items-center" />
         </div>
 
         <div>
           {sidebarItems.map((item) => {
             return (
-              <div className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
-                <span className=" text-xl mx-6">{item.icon}</span>
-                {item.name}
+              <div key={item.id} className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
+                <span className=" text-xl mx-2">{item.icon}</span>
+                <span className="text-sm">{item.name}</span>
               </div>
             );
           })}
@@ -178,12 +179,12 @@ const Sidebar = () => {
 
       {/* Explore */}
 
-      <h1 className="font-bold text-xl ml-5 pt-4">Explore</h1>
+      <h1 className="font-bold text-xl ml-4 pt-4">Explore</h1>
       <div>
         {sidebarItems1.map((item) => (
-          <div className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
-            <span className=" text-xl mx-6">{item.icon}</span>
-            {item.name}
+          <div key={item.id}  className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
+            <span className=" text-xl mx-2">{item.icon}</span>
+           <span className="text-sm"> {item.name}</span>
           </div>
         ))}
       </div>
@@ -191,18 +192,18 @@ const Sidebar = () => {
       <hr className="mt-4" />
 
       {/* More Section */}
-      <h1 className="font-bold text-xl ml-5 pt-4">More From YouTube</h1>
+      <h1 className="font-bold text-lg ml-4 pt-4">More From YouTube</h1>
       <div>
         {sidebarItem2.map((item) => (
-          <div className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
-            <span className=" text-xl mx-6  text-red-600">{item.icon}</span>
-            {item.name}
+          <div key={item.id}  className="flex cursor-pointer  p-2 rounded-lg hover:bg-gray-300 my-2">
+            <span className=" text-xl mx-2    text-red-600">{item.icon}</span>
+            <span className="text-sm">{item.name}</span>
           </div>
         ))}
       </div>
 
       <hr className="mt-4" />
-      <div className="ml-5 my-2 p-2 text-sm font-semibold text-gray-600">
+      <div className="ml-5 my-2 p-2 text-xs font-semibold text-gray-600">
         <p className="my-3" >About Press Copyright <br/>  Contact us Creators<br/> Advertise Developers</p>
         <p className="my-3" >Terms Privacy Policy & Safety How YouTube works<br/> Test new features</p>
         <p className="my-3 text-xs text-gray-400" >© 2024 Google LLC</p>

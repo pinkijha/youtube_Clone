@@ -14,5 +14,6 @@
         - npm i axios - for http request
         - npm i avatar - for image
         - npm i moment - to show timing on youtube video
+        - npm i js-abbreviation-number - for numbers of views
         
 

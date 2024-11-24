@@ -27,7 +27,8 @@ import { SiYoutubestudio } from "react-icons/si";
 import { SiYoutubekids } from "react-icons/si";
 import { SiYoutubemusic } from "react-icons/si";
 import { PiLightbulbBold } from "react-icons/pi";
-
+import { MdOutlineSubscriptions } from "react-icons/md";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 export {
 
@@ -59,5 +60,7 @@ export {
     SiYoutubestudio,
     SiYoutubekids ,
     SiYoutubemusic,
+    MdOutlineSubscriptions,
+    BsFillCheckCircleFill,
 
   };

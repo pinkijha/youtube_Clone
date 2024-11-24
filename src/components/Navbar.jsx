@@ -17,10 +17,10 @@ const Navbar = () => {
       </div>
 
       <div className="flex w-[35%] items-center">
-        <div className="w-[100%] px-3 py-2 border rounded-l-full">
+        <div className="w-[100%] px-3 py-2 border border-gray-400 rounded-l-full">
           <input className="outline-none w-[100%]" type="text" placeholder="Search" />
         </div>
-        <button className="px-4 py-2 border rounded-r-full bg-gray-100">
+        <button className="px-4 py-2 border border-gray-400 rounded-r-full bg-gray-100">
           <CiSearch size={"24px"} />
         </button>
         <IoMdMic
