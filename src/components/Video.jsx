@@ -5,7 +5,7 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 import { abbreviateNumber } from "js-abbreviation-number";
 
 const Video = ({ video }) => {
-  console.log(video);
+  // console.log(video);
   return (
     <div className="flex">
       <Link to={`/video/${video?.videoId}`}>

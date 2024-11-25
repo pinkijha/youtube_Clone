@@ -15,5 +15,6 @@
         - npm i avatar - for image
         - npm i moment - to show timing on youtube video
         - npm i js-abbreviation-number - for numbers of views
+        - npm i react-player
         
 
