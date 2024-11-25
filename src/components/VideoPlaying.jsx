@@ -9,23 +9,34 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const VideoPlaying = () => {
   const [video, setVideo] = useState();
-  const [relatedVidei, setRelatedVideo] = useState();
+  const [relatedVideo, setRelatedVideo] = useState();
   const { id } = useParams();
 
   useEffect(() => {
     fetchVideoDetails();
+    fetchRelatedVideo();
   }, [id]);
 
+  // FetchVideoDetails
   const fetchVideoDetails = () => {
     fetchData(`video/details/?id=${id}`).then((res) => {
       console.log(res);
       setVideo(res);
     });
   };
+
+  // Suggested Video -> fetchRelated Video API
+  const fetchRelatedVideo = () =>{
+    fetchData(`video/related-contents/?id=${id}`).then((res) => {
+      console.log(res);
+      setRelatedVideo(res.contents);
+    });
+  };
+
   return (
     <div className="flex justify-center flex-row h-[calc(100%-56px)] ml-[100px] mt-16">
       <div className="w-full max-w-[1580px] flex flex-col lg:flex-row">
-        <div className="flex flex-col lg:w-[calc(100%-600px)] xl:w-[100%-400px] px-4 py-3  lg:py-6">
+        <div className="flex flex-col lg:w-[calc(100%-500px)] xl:w-[100%-400px] px-4 py-3  lg:py-6">
           <div className="h-[200px] md:h-[450px] ml-[-16px] mr-[-16px] lg:ml-0 lg:mr-0">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
@@ -94,9 +105,11 @@ const VideoPlaying = () => {
             {video?.stats?.comments} <p>Comments</p>
           </div>
         </div>
-      </div>
+        
       <div>
         <SuggestedVideo />
+      </div>
+
       </div>
     </div>
   );
