@@ -29,7 +29,7 @@ const VideoPlaying = () => {
   const fetchRelatedVideo = () =>{
     fetchData(`video/related-contents/?id=${id}`).then((res) => {
       console.log(res);
-      setRelatedVideo(res.contents);
+      setRelatedVideo(res);
     });
   };
 
@@ -37,6 +37,7 @@ const VideoPlaying = () => {
     <div className="flex justify-center flex-row h-[calc(100%-56px)] ml-[100px] mt-16">
       <div className="w-full max-w-[1580px] flex flex-col lg:flex-row">
         <div className="flex flex-col lg:w-[calc(100%-500px)] xl:w-[100%-400px] px-4 py-3  lg:py-6">
+
           <div className="h-[200px] md:h-[450px] ml-[-16px] mr-[-16px] lg:ml-0 lg:mr-0">
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
@@ -49,7 +50,7 @@ const VideoPlaying = () => {
           </div>
 
           {/* channel logo & title */}
-          <div className="font-bold text-sm md:text-xl mt-4 line-clamp-2">
+          {/* <div className="font-bold text-sm md:text-xl mt-4 line-clamp-2">
             {video?.title}
           </div>
 
@@ -75,7 +76,7 @@ const VideoPlaying = () => {
                   </div>
 
                   <div className="text-sm">
-                    {video?.author?.stats.subcribersText}
+                    {video?.author?.stats?.subcribersText}
                   </div>
                 </div>
                 <span
@@ -103,11 +104,16 @@ const VideoPlaying = () => {
           </div>
           <div className="flex gap-x-6 font-semibold rounded-xl mt-4 text-xl">
             {video?.stats?.comments} <p>Comments</p>
-          </div>
+          </div> */}
         </div>
         
-      <div>
-        <SuggestedVideo />
+      <div className="flex flex-col px-4 py-6 h-[calc(100vh-4.625rem)] 
+      overflow-y-scroll overflow-x-hidden lg:w-[350px] xl:w-[400px] ">
+        {relatedVideo?.contents?.map((item, index) => {
+          if (item?.type!=='video') return false;
+          return <SuggestedVideo key={item.video.videoId || index} video={item?.video} />
+
+        })}
       </div>
 
       </div>
