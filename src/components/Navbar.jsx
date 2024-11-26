@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from 'react-avatar';
 import { MdOutlineMenu } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
@@ -8,9 +8,17 @@ import { AiOutlineBell } from "react-icons/ai";
 import logo from "../../public/logo_viewtube.png";
 import profilePic from '../../public/profilepic.jpg'
 import { useNavigate } from "react-router-dom";
+import { useUtils } from "../context/UtilsContext";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
+
+  // call UtilsContext Variable
+  const { isSidebar, setIsSidebar, mobileShow, setMobileShow } = useUtils()
+
+  useEffect(() => {
+    console.log({isSidebar, mobileShow});
+  },[isSidebar])
 
   const navigate = useNavigate();
 
@@ -19,12 +27,23 @@ const Navbar = () => {
       navigate(`/search/${searchQuery}`);
       setSearchQuery(' ')
     }
+  };
+
+  // MenuBar
+  const handleSidebar = () => {
+    if(window.innerWidth <= 1280){
+      setIsSidebar(!isSidebar);
+      setMobileShow(!mobileShow);
+    }
+    setIsSidebar(!isSidebar);
   }
 
   return (
     <div className="flex justify-between fixed top-0 w-[100%] bg-white px-6 py-2">
       <div className="flex items-center space-x-4">
-        <MdOutlineMenu className="cursor-pointer text-3xl" />
+        <MdOutlineMenu className="cursor-pointer text-3xl" 
+        onClick={handleSidebar}
+        />
         <img className="w-24 cursor-pointer" src={logo} alt="logo-img" />
       </div>
 

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const UtilsContext = createContext();
+const UtilsContext = createContext(null);
 
 export const UtilsContextProvider = ({children}) => {
     const [ isSidebar, setIsSidebar ] = useState(false);
